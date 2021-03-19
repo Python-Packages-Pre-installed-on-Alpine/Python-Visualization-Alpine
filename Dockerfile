@@ -39,7 +39,7 @@ RUN set -o allexport \
     # --no-build-isolation should allow using the installed numpy so it doesn't try to install another numpy
     && pip install --no-cache-dir --no-build-isolation opencv-python \
     && apk del --no-cache .build-deps \
-    && apk add --no-cache openjpeg libdc1394 ffmpeg-libs \
+    && apk add --no-cache lapack blas openexr openjpeg libdc1394 ffmpeg-libs \
     && python -c "import cv2" \
     && . ./cleanup.sh
 
